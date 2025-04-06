@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>癒し音テスト</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#aee1f9, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+
+    button {
+      padding: 1em 2em;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 12px;
+      background: #7fc8f8;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+  <button id="play">風鈴の音を鳴らす</button>
+
+  <audio id="sound" src="windchime.mp3" preload="auto"></audio>
+
+  <script>
+    const btn = document.getElementById('play');
+    const sound = document.getElementById('sound');
+
+    btn.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  </script>
+</body>
+</html>
